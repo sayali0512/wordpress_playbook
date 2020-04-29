@@ -9,6 +9,6 @@
   name: "Download replica script using get_url"
 -
   name: "Run a replica script with arguments (using 'cmd' parameter)"
-  shell: /home/azureadmin/testwp.sh ${7}
+  shell: /home/azureadmin/testwp.sh
   args:
     executable: /bin/bash

@@ -9,6 +9,6 @@
   name: "Download woocommerce script using get_url"
 -
   name: "Run a woocommerce script with arguments (using 'cmd' parameter)"
-  shell: /home/azureadmin/woocommerce.sh
+  shell: /home/azureadmin/woocommerce.sh  ${7}
   args:
     executable: /bin/bash
