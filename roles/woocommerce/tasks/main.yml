@@ -1,0 +1,14 @@
+---
+-
+  get_url:
+    dest: /home/azureadmin
+    group: azureadmin
+    mode: 493
+    owner: azureadmin
+    url: "https://raw.githubusercontent.com/asift91/ansiblewp/master/woocommerce.sh"
+  name: "Download woocommerce script using get_url"
+-
+  name: "Run a woocommerce script with arguments (using 'cmd' parameter)"
+  shell: /home/azureadmin/woocommerce.sh
+  args:
+    executable: /bin/bash
