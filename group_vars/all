@@ -11,6 +11,7 @@ auto_up_disable: true
 # server host name is updated at runtime
 server_hostname: wordpress
 domain_name: domain
+user_name: azusername
 
 # WordPress Version
 wp_version: 4.7.5
