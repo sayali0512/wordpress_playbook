@@ -1,5 +1,5 @@
 # WordPress database settings
-# Database details are taken inout from user
+# Database details are taken input from user
 # Below wordpress values are updated runtime
 wp_db_name: wordpress
 wp_db_user: wordpress
