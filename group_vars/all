@@ -8,7 +8,7 @@ wp_db_password: password
 #
 auto_up_disable: true
 
-# server host name is updated at runtime
+# user_name and domain_name values are updated at runtime with user input
 server_hostname: wordpress
 domain_name: domain
 user_name: azusername
