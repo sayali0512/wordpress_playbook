@@ -13,7 +13,7 @@ NGINX server, MySQL and PHP.
 Role Variables
 --------------
 
-This playbook has three roles. One is for wordpress installation and other is for WooCommerce plugin installation and last role is for Replicating the entire playbook to VMSS of the host VM. 
+This playbook has three roles. One is for wordpress installation and other is for WooCommerce plugin installation and last role is for Replicating the entire WordPress folder to VMSS of the host VM. 
 
 Example Playbook
 ----------------
