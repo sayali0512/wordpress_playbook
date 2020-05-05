@@ -14,14 +14,14 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
+// ** MySQL settings - You can get the following details from user interface** //
 /** The name of the database for WordPress */
 define('DB_NAME', '{{ wp_db_name }}');
 
-/** MySQL database username */
+/** username for MySQL database */
 define('DB_USER', '{{ wp_db_user }}');
 
-/** MySQL database password */
+/** password for MySQL database */
 define('DB_PASSWORD', '{{ wp_db_password }}');
 
 /** MySQL hostname */
@@ -66,7 +66,7 @@ $table_prefix  = 'wp_';
 define('WPLANG', '');
 
 /**
- * For developers: WordPress debugging mode.
+ * For developers: Debugging mode for WordPress.
  *
  * Change this to true to enable the display of notices during development.
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
