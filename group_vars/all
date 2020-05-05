@@ -5,7 +5,8 @@ wp_db_name: wordpress
 wp_db_user: wordpress
 wp_db_password: password
 
-#
+# Disable All Updates
+# By default automatic updates are enabled, set this value to true to disable all automatic updates
 auto_up_disable: true
 
 # user_name and domain_name values are updated at runtime with user input
