@@ -13,10 +13,11 @@ server_hostname: wordpress
 domain_name: domain
 user_name: azusername
 
-# WordPress Version
-wp_version: 4.7.5
-wp_sha1sum: fbe0ee1d9010265be200fe50b86f341587187302
-# update the sha1sum value if we update the  wordpress to 5.4.0 from 4.7.5
+# WordPress Latest Version
+#if you want to update wordpress to latest version then update sha1sum value from https://wordpress.org/download/releases/
+wp_version: 5.4.1
+wp_sha1sum: 9800c231828eb5cd76ba0b8aa6c1a74dfca2daff
+
 
 #Define Core Update Level
 #true  = Development, minor, and major updates are all enabled
