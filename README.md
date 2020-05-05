@@ -36,4 +36,4 @@ Including an example of how to use your role (for instance, with variables passe
 Author Information
 ------------------
 
-This entire asnible playbook repository is created by iTalent Digital pvt ltd.
+This entire ansible playbook repository is created by iTalent Digital pvt ltd.
