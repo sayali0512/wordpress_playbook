@@ -6,9 +6,11 @@
     mode: 493
     owner: "{{user_name | quote }}"
     url: "https://raw.githubusercontent.com/asift91/ansiblewp/master/replication.sh"
+    description: "It will clone the replication script from repository"
   name: "Download replica script using get_url"
 -
   name: "Run a replica script with arguments (using 'cmd' parameter)"
+  description: "It will run the cloned script"
   shell: /home/{{user_name | quote }}/replication.sh {{domain_name | quote }}
   args:
     executable: /bin/bash
