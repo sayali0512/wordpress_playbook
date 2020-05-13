@@ -1,5 +1,4 @@
 - hosts: webservers
-  description: "Main playbook which will execute the following roles"
   roles:
     - wordpress
     - woocommerce
