@@ -1,6 +1,5 @@
 ---
 - name: Create webroot
-  description: "It will createweb root"
   file:
     state: directory
     path: /var/www/html
@@ -11,7 +10,6 @@
 
 - name: Check if WordPress directory exists in /var/www/html
   stat: path=/var/www/html{{server_hostname}}
-  description: "It will check for directory"
   register: check_path
 
 - name: Download WordPress
@@ -20,7 +18,6 @@
     dest: /tmp/wordpress-{{ wp_version }}.tar.gz 
     checksum: "sha1:{{ wp_sha1sum }}" 
   become: yes
-  description: "It will download latest version of wordpress"
   when: not check_path.stat.exists
 
 - name: Extract WordPress
@@ -35,26 +32,22 @@
 
 - name: Move WordPress install files
   command: mv /tmp/wordpress /var/www/html/{{server_hostname}}
-  description: "It will move the contents of wordpress"
   become: yes
   when: not check_path.stat.exists
 
 - name: Fetch random salts for WordPress config
   local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
-  description: "This command will fetch secrect keys from wordpress api"
   register: "wp_salt"
   become: no
 
 - name: Add wp-config
   template: "src=wp-config.php dest=/var/www/html/{{server_hostname}}/wp-config.php"
-  description: "It will add wp-config.php file "  
   become: yes
 
 - name: Update WordPress config file
 
   lineinfile:
     dest: "/var/www/html/{{server_hostname}}/wp-config.php"
-    description: "It will find regexp and replace line"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
   with_items:
