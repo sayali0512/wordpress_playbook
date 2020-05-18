@@ -32,13 +32,13 @@
   
  - 
   name: create a database
-  command: mysql -h {{dbservername}} -u {{dbusername}} -p{{dbpassword}} -e "CREATE DATABASE {{moodle_db_name}} CHARACTER SET utf8;"
+  command: mysql -h {{wp_db_server_name}} -u {{wp_db_user}} -p{{wp_db_password}} -e "CREATE DATABASE {{wp_db_name}} CHARACTER SET utf8;"
   register: output
 - debug: var=output.stdout_lines
 
 - 
   name: grant user permission to database
-  command: mysql -h {{dbservername}} -u {{dbusername}} -p{{dbpassword}} -e "GRANT ALL ON {{moodle_db_name}}.* TO moodle IDENTIFIED BY 'Moodle@123';"
+  command: mysql -h {{wp_db_server_name}} -u {{wp_db_user}} -p{{wp_db_password}} -e "GRANT ALL ON {{wp_db_name}}.* TO moodle IDENTIFIED BY 'WordPress@123';"
   register: outputpremission
 - debug: var=outputpremission.stdout_lines
 
