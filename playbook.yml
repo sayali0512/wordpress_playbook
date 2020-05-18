@@ -3,14 +3,8 @@
   roles:
     - sshkeyconfig
 
- 
 - hosts: webservers
   roles:
      - wordpress
      - woocommerce
      - replication
-
-
-
-
-  
