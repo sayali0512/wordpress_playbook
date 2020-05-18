@@ -2,14 +2,14 @@
 - name: Create webroot
   file:
     state: directory
-    path: "{{ path | quote }}"
+    path: "{{path}}"
     owner: root
     group: root
     mode: 0755
   become: yes
 
-- name: Check if WordPress directory exists in {{ path | quote }}
-  stat: path={{ path | quote }}/{{server_hostname}}
+- name: Check if WordPress directory exists in {{path}}
+  stat: path={{ path}}/{{server_hostname}}
   register: check_path
 
 - name: Download WordPress
@@ -31,7 +31,7 @@
   when: not check_path.stat.exists
 
 - name: Move WordPress install files
-  command: mv /tmp/wordpress {{ path | quote }}/{{server_hostname}}
+  command: mv /tmp/wordpress {{path}}/{{server_hostname}}
   become: yes
   when: not check_path.stat.exists
 
@@ -47,7 +47,7 @@
 - name: Update WordPress config file
 
   lineinfile:
-    dest: "{{ path | quote }}/{{server_hostname}}/wp-config.php"
+    dest: "{{path}}/{{server_hostname}}/wp-config.php"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
   with_items:
