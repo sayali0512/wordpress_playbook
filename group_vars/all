@@ -29,7 +29,7 @@ core_update_level: true
 
 #defaultpath
 
-path: default_path
+
 default_permission: www-data
 webroot: /var/www/html
 
