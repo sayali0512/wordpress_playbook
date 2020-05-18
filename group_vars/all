@@ -13,6 +13,7 @@ auto_up_disable: true
 server_hostname: wordpress
 domain_name: domain
 user_name: azusername
+vm_password: password
 
 # WordPress Latest Version
 #if you want to update wordpress to latest version then update sha1sum value from https://wordpress.org/download/releases/
