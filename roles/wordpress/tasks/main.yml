@@ -8,21 +8,21 @@
     mode: 0755
   become: yes
 
-- name: Check if WordPress directory exists in {{webroot}}
-  stat: path={{webroot}}/{{server_hostname}}
+- name: Check if WordPress directory exists in "{{webroot}}"
+  stat: path="{{webroot}}/{{server_hostname}}"
   register: check_path
 
 - name: Download WordPress
   get_url: 
-    url: {{wordpress_url}}-{{ wp_version }}.tar.gz 
-    dest: {{wordpress_path}}-{{ wp_version }}.tar.gz 
+    url: "{{wordpress_url}}-{{ wp_version }}.tar.gz"
+    dest: "{{wordpress_path}}-{{ wp_version }}.tar.gz" 
     checksum: "sha1:{{ wp_sha1sum }}" 
   become: yes
   when: not check_path.stat.exists
 
 - name: Extract WordPress
   unarchive:
-    src: {{wordpress_path}}-{{ wp_version }}.tar.gz
+    src: "{{wordpress_path}}-{{ wp_version }}.tar.gz"
     dest: /tmp
     owner: "{{default_permission}}"
     group: "{{default_permission}}"
@@ -44,12 +44,12 @@
 
 
 - name: Move WordPress install files
-  command: mv {{wordpress_path}} {{webroot}}/{{server_hostname}}
+  command: "mv {{wordpress_path}} {{webroot}}/{{server_hostname}}"
   become: yes
   when: not check_path.stat.exists
 
 - name: Fetch random salts for WordPress config
-  local_action: command curl {{wp_salt_path}}
+  local_action: "command curl {{wp_salt_path}}"
   register: "wp_salt"
   become: no
 
