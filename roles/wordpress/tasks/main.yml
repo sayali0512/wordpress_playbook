@@ -3,8 +3,8 @@
   file:
     state: directory
     path: "{{path}}"
-    owner: root
-    group: root
+    owner: "{{default_permission}}"
+    group: "{{default_permission}}"
     mode: 0755
   become: yes
 
@@ -24,8 +24,8 @@
   unarchive:
     src: /tmp/wordpress-{{ wp_version }}.tar.gz
     dest: /tmp
-    owner: www-data
-    group: www-data
+    owner: "{{default_permission}}"
+    group: "{{default_permission}}"
     copy: no
   become: yes
   when: not check_path.stat.exists
