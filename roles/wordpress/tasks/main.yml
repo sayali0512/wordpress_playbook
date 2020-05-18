@@ -47,7 +47,7 @@
 - name: Update WordPress config file
 
   lineinfile:
-    dest: "/var/www/html/{{server_hostname}}/wp-config.php"
+    dest: "{{ path | quote }}/{{server_hostname}}/wp-config.php"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
   with_items:
