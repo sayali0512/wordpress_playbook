@@ -9,7 +9,7 @@
   become: yes
 
 - name: Check if WordPress directory exists in {{ path | quote }}
-  stat: path={{ path | quote }}{{server_hostname}}
+  stat: path={{ path | quote }}/{{server_hostname}}
   register: check_path
 
 - name: Download WordPress
