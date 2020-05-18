@@ -30,7 +30,7 @@
   become: yes
   when: not check_path.stat.exists
   
- - 
+- 
   name: create a database
   command: mysql -h {{wp_db_server_name}} -u {{wp_db_user}} -p{{wp_db_password}} -e "CREATE DATABASE {{wp_db_name}} CHARACTER SET utf8;"
   register: output
