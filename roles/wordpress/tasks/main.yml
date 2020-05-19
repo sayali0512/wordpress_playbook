@@ -26,6 +26,7 @@
     dest: /tmp
     owner: "{{default_permission}}"
     group: "{{default_permission}}"
+    copy: no
   become: yes
   when: not check_path.stat.exists
   
